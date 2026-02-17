@@ -50,8 +50,13 @@ modules:
       remove:
         - org.kde.elisa
 
-    - type: script
+  - type: script
     scripts:
+      - plymouth-set-default-theme bazzite -R
+      - chmod +x /usr/bin/clean-system
+
+  - type: signing
+
       - plymouth-set-default-theme bazzite -R
       - chmod +x /usr/bin/clean-system
 
