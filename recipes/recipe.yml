@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: INTR-Bazzite-OS
+name: INTR-BZTE-OS
 description: Enter AMD/Intel KDE Bazzite based fork with Bloatware Removed
 
 base-image: ghcr.io/ublue-os/bazzite
@@ -16,6 +16,10 @@ modules:
     install:
       - discord
       - steam
+      - mangohud
+      - input-remapper
+      - gnome-disk-utility
+      - fastfetch
     remove:
       - firefox
       - firefox-langpacks
@@ -25,6 +29,15 @@ modules:
       - libreoffice-impress
       - libreoffice-writer
       - libreoffice-langpack-en
+      - kpat
+      - kmahjongg
+      - kmines
+      - kaddressbook
+      - korganizer
+      - dragon
+      - khelpcenter
+      - krdc
+      - krfb
 
   - type: default-flatpaks
     notify: true
@@ -36,5 +49,10 @@ modules:
         - org.videolan.VLC
       remove:
         - org.kde.elisa
+
+    - type: script
+    scripts:
+      - plymouth-set-default-theme bazzite -R
+      - clean-system
 
   - type: signing
