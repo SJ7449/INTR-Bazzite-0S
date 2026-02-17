@@ -20,6 +20,7 @@ modules:
       - input-remapper
       - gnome-disk-utility
       - fastfetch
+      - python3.14
     remove:
       - firefox
       - firefox-langpacks
